@@ -1,4 +1,5 @@
 from resources import GOLD, HIGH
+
 import pygame
 from pygame.locals import *
 
@@ -6,7 +7,7 @@ from pygame.locals import *
 class Graphics:
     def __init__(self):
         self.window_size = 600
-        self.background = pygame.image.load('checkers/resources/board.png')
+        self.background = pygame.image.load('checkers/resources/board2.png')
         self.screen = pygame.display.set_mode((self.window_size, self.window_size))
         self.square_size = self.window_size / 8
         self.piece_size = self.square_size / 2
@@ -31,7 +32,6 @@ class Graphics:
 					pygame.draw.circle(self.screen, board.matrix[x][y].occupant.color, self.pixel_coords((x,y)), self.piece_size) 
 
     def pixel_coords(self, board_coords):
-		
 		return (board_coords[0] * self.square_size + self.piece_size, board_coords[1] * self.square_size + self.piece_size)
 
     def board_coords(self, (pixel_x, pixel_y)):
